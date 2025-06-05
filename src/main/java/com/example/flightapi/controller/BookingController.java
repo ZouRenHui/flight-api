@@ -6,7 +6,6 @@ import java.util.Locale;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -27,7 +26,6 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 
 @RestController
 @RequestMapping("/api/booking")
-@CrossOrigin(origins = "*") // 临时处理跨域问题（开发阶段）
 @Tag(name = "Booking API", description = "APIs for Manage Booking Info")
 @Validated
 public class BookingController {

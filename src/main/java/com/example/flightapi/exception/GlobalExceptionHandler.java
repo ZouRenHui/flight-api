@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import com.example.flightapi.config.BaseResponse;
 
+import io.jsonwebtoken.ExpiredJwtException;
+
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
@@ -43,5 +45,10 @@ public class GlobalExceptionHandler {
 		String message = messageSource.getMessage("error.internal", null, Locale.ENGLISH);
 		return new ResponseEntity<>(BaseResponse.failure(500, message + ex.getMessage()),
 				HttpStatus.INTERNAL_SERVER_ERROR);
+	}
+	
+	@ExceptionHandler(ExpiredJwtException.class)
+	public ResponseEntity<?> handleJwtExpired(ExpiredJwtException e) {
+		return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Token expired, please login again.");
 	}
 }

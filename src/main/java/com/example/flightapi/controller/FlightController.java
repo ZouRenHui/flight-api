@@ -6,7 +6,6 @@ import java.util.Locale;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -22,7 +21,6 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 
 @RestController
 @RequestMapping("/api/flights")
-@CrossOrigin(origins = "*") // 临时处理跨域问题（开发阶段）
 @Tag(name = "Flight API", description = "APIs for Get Flight Info")
 @Validated
 public class FlightController {
