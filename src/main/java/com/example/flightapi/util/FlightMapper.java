@@ -31,22 +31,33 @@ public class FlightMapper {
 		if (dto == null)
 			return null;
 
-		FlightResponseDTO.FlightResponseDTOBuilder builder = FlightResponseDTO.builder().flightId(dto.getFlightId())
+		FlightResponseDTO.FlightResponseDTOBuilder builder = FlightResponseDTO.builder()
+				.flightId(dto.getFlightId())
 				.flightNumber(dto.getFlightNumber())
-
-				.departureAirportId(dto.getDepartureAirportId()).depCode(dto.getDepCode()).depName(dto.getDepName())
-
-				.arrivalAirportId(dto.getArrivalAirportId()).arrCode(dto.getArrCode()).arrName(dto.getArrName())
-
-				.departureTime(dto.getDepartureTime()).arrivalTime(dto.getArrivalTime())
-				.overnightFlag(dto.getOvernightFlag()).planeType(dto.getPlaneType()).companyName(dto.getCompanyName())
-
-				.priceClassF(dto.getPriceClassF()).priceClassC(dto.getPriceClassC()).priceClassY(dto.getPriceClassY());
+				.departureAirportId(dto.getDepartureAirportId())
+				.depCode(dto.getDepCode())
+				.depName(dto.getDepName())
+				.depCity(dto.getDepCity())
+				.arrivalAirportId(dto.getArrivalAirportId())
+				.arrCode(dto.getArrCode())
+				.arrName(dto.getArrName())
+				.arrCity(dto.getArrCity())
+				.departureTime(dto.getDepartureTime())
+				.arrivalTime(dto.getArrivalTime())
+				.overnightFlag(dto.getOvernightFlag())
+				.planeType(dto.getPlaneType())
+				.companyName(dto.getCompanyName())
+				.priceClassF(dto.getPriceClassF())
+				.priceClassC(dto.getPriceClassC())
+				.priceClassY(dto.getPriceClassY());
 
 		// 判断是否有经停
 		if (dto.getStopAirportId() != null) {
-			builder.stopAirportId(dto.getStopAirportId()).stopCode(dto.getStopCode()).stopName(dto.getStopName())
-					.stopCity(dto.getStopCity()).stopTime(dto.getStopTime());
+			builder.stopAirportId(dto.getStopAirportId())
+				.stopCode(dto.getStopCode())
+				.stopName(dto.getStopName())
+				.stopCity(dto.getStopCity())
+				.stopTime(dto.getStopTime());
 		}
 
 		return builder.build();

@@ -25,6 +25,27 @@ public class BookingResponseDTO {
     private String flightClass;
     private String bookingTime;
     private BigDecimal price;
+
     private String firstName;
     private String lastName;
+
+    // Outbound flight info
+    private String outboundDepCity;
+    private String outboundDepAirportName;
+    private String outboundDepAirportCode;
+    private String outboundDepTime;
+    private String outboundArrCity;
+    private String outboundArrAirportName;
+    private String outboundArrAirportCode;
+    private String outboundArrTime;
+
+    // Return flight info
+    private String returnDepCity;
+    private String returnDepAirportName;
+    private String returnDepAirportCode;
+    private String returnDepTime;
+    private String returnArrCity;
+    private String returnArrAirportName;
+    private String returnArrAirportCode;
+    private String returnArrTime;
 }

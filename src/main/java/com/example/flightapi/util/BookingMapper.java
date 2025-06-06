@@ -25,15 +25,45 @@ public class BookingMapper {
 	}
 
 	public BookingResponseDTO toResponseDTO(BookingWithPassengerDTO dto) {
-		if (dto == null)
-			return null;
+	    if (dto == null)
+	        return null;
 
-		return BookingResponseDTO.builder().bookingId(dto.getBookingId()).bookingNo(dto.getBookingNo())
-				.userId(dto.getUserId()).passengerId(dto.getPassengerId()).firstName(dto.getFirstName())
-				.lastName(dto.getLastName()).flightIdOutbound(dto.getFlightIdOutbound())
-				.flightIdReturn(dto.getFlightIdReturn()).outboundDate(dto.getOutboundDate())
-				.returnDate(dto.getReturnDate()).status(dto.getStatus()).flightClass(dto.getFlightClass())
-				.bookingTime(dto.getBookingTime()).price(dto.getPrice()).build();
+	    return BookingResponseDTO.builder()
+	            .bookingId(dto.getBookingId())
+	            .bookingNo(dto.getBookingNo())
+	            .userId(dto.getUserId())
+	            .passengerId(dto.getPassengerId())
+	            .firstName(dto.getFirstName())
+	            .lastName(dto.getLastName())
+	            .flightIdOutbound(dto.getFlightIdOutbound())
+	            .flightIdReturn(dto.getFlightIdReturn())
+	            .outboundDate(dto.getOutboundDate())
+	            .returnDate(dto.getReturnDate())
+	            .status(dto.getStatus())
+	            .flightClass(dto.getFlightClass())
+	            .bookingTime(dto.getBookingTime())
+	            .price(dto.getPrice())
+
+	            // Outbound flight info
+	            .outboundDepCity(dto.getOutboundDepCity())
+	            .outboundDepAirportName(dto.getOutboundDepAirportName())
+	            .outboundDepAirportCode(dto.getOutboundDepAirportCode())
+	            .outboundDepTime(dto.getOutboundDepTime())
+	            .outboundArrCity(dto.getOutboundArrCity())
+	            .outboundArrAirportName(dto.getOutboundArrAirportName())
+	            .outboundArrAirportCode(dto.getOutboundArrAirportCode())
+	            .outboundArrTime(dto.getOutboundArrTime())
+
+	            // Return flight info
+	            .returnDepCity(dto.getReturnDepCity())
+	            .returnDepAirportName(dto.getReturnDepAirportName())
+	            .returnDepAirportCode(dto.getReturnDepAirportCode())
+	            .returnDepTime(dto.getReturnDepTime())
+	            .returnArrCity(dto.getReturnArrCity())
+	            .returnArrAirportName(dto.getReturnArrAirportName())
+	            .returnArrAirportCode(dto.getReturnArrAirportCode())
+	            .returnArrTime(dto.getReturnArrTime())
+	            .build();
 	}
 
 	public BookingResponseDTO toResponseDTO(Booking dto) {
@@ -62,7 +92,27 @@ public class BookingMapper {
 	        projection.getStatus(),
 	        projection.getFlightClass(),
 	        projection.getBookingTime(),
-	        projection.getPrice()
+	        projection.getPrice(),
+
+	        // outbound flight info
+	        projection.getOutboundDepCity(),
+	        projection.getOutboundDepAirportName(),
+	        projection.getOutboundDepAirportCode(),
+	        projection.getOutboundDepTime(),
+	        projection.getOutboundArrCity(),
+	        projection.getOutboundArrAirportName(),
+	        projection.getOutboundArrAirportCode(),
+	        projection.getOutboundArrTime(),
+
+	        // return flight info
+	        projection.getReturnDepCity(),
+	        projection.getReturnDepAirportName(),
+	        projection.getReturnDepAirportCode(),
+	        projection.getReturnDepTime(),
+	        projection.getReturnArrCity(),
+	        projection.getReturnArrAirportName(),
+	        projection.getReturnArrAirportCode(),
+	        projection.getReturnArrTime()
 	    );
 	}
 	

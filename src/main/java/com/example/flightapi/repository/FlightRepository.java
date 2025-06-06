@@ -30,9 +30,9 @@ public interface FlightRepository extends CrudRepository<Flight, Integer> {
 					stop.name AS stopName,
 					stop.city AS stopCity,
 
-					CAST(f.departure_time AS CHAR) AS departureTime,
-					CAST(f.arrival_time AS CHAR) AS arrivalTime,
-					CAST(f.stop_time AS CHAR) AS stopTime,
+					f.departure_time AS departureTime,
+					f.arrival_time AS arrivalTime,
+					f.stop_time AS stopTime,
 
 					f.overnight_flag AS overnightFlag,
 					f.plane_type AS planeType,
@@ -68,9 +68,9 @@ public interface FlightRepository extends CrudRepository<Flight, Integer> {
 				arr.name AS arrName,
 				arr.city AS arrCity,
 
-				CAST(f.departure_time AS CHAR) AS departureTime,
-				CAST(f.arrival_time AS CHAR) AS arrivalTime,
-				CAST(f.stop_time AS CHAR) AS stopTime,
+				f.departure_time AS departureTime,
+				f.arrival_time AS arrivalTime,
+				f.stop_time AS stopTime,
 
 				f.overnight_flag AS overnightFlag,
 				f.plane_type AS planeType,
@@ -110,9 +110,9 @@ public interface FlightRepository extends CrudRepository<Flight, Integer> {
 				stop.name AS stopName,
 				stop.city AS stopCity,
 
-				CAST(f.departure_time AS CHAR) AS departureTime,
-				CAST(f.arrival_time AS CHAR) AS arrivalTime,
-				CAST(f.stop_time AS CHAR) AS stopTime,
+				f.departure_time AS departureTime,
+				f.arrival_time AS arrivalTime,
+				f.stop_time AS stopTime,
 
 				f.overnight_flag AS overnightFlag,
 				f.plane_type AS planeType,
